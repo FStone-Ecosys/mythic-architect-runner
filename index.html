@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Mythic Architect — Colosseum Runner</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+
+      <div id="hud" class="hidden">
+        <div id="hud-top">
+          <div id="hud-left">
+            <div id="health-hearts" aria-label="Health"></div>
+            <div id="status-icons">
+              <span class="status-icon lit" title="Shield" aria-label="Shield">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#9fdfff" stroke-width="1.8"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"/></svg>
+              </span>
+              <span class="status-icon lit" title="Helmet" aria-label="Helmet">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#9fdfff" stroke-width="1.8"><path d="M4 14c0-5 3.5-9 8-9s8 4 8 9H4z"/><path d="M4 14h16v2c0 1.5-1 3-3 3H7c-2 0-3-1.5-3-3v-2z"/><path d="M12 5v3"/></svg>
+              </span>
+              <span class="status-icon lit" title="Chest" aria-label="Chest">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#9fdfff" stroke-width="1.8"><path d="M8 7l4-3 4 3v4l3 2v7H5v-7l3-2V7z"/><path d="M12 10v10"/></svg>
+              </span>
+            </div>
+          </div>
+          <div id="score-display">NILL</div>
+          <button id="btn-pause" type="button" aria-label="Pause">&#10074;&#10074;</button>
+        </div>
+
+        <div id="tap-prompt">TAP to Jump</div>
+
+        <div id="hud-bottom">
+          <div id="stamina-wrap">
+            <div id="stamina-bar">
+              <div id="stamina-fill"></div>
+              <div id="stamina-danger"></div>
+            </div>
+            <span id="stamina-label">CORE</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="start-screen" class="overlay">
+        <div class="panel">
+          <p class="eyebrow">CYBER-ROMAN ENDLESS RUNNER</p>
+          <h1>MYTHIC<br />ARCHITECT</h1>
+          <p class="tagline">Dodge gladiators. Harvest DATA glyphs.<br />Survive the neon Colosseum.</p>
+          <ul class="controls-list">
+            <li><kbd>TAP</kbd> / <kbd>SPACE</kbd> — Jump</li>
+            <li><kbd>DOUBLE-TAP</kbd> / <kbd>SHIFT</kbd> — Dash</li>
+            <li><kbd>&larr;&rarr;</kbd> / <kbd>A D</kbd> / swipe — Lane</li>
+          </ul>
+          <button id="btn-start" class="primary" type="button">ENTER THE ARENA</button>
+        </div>
+      </div>
+
+      <div id="pause-screen" class="overlay hidden">
+        <div class="panel">
+          <h2>PAUSED</h2>
+          <button id="btn-resume" class="primary" type="button">RESUME</button>
+          <button id="btn-restart-pause" class="ghost" type="button">RESTART</button>
+        </div>
+      </div>
+
+      <div id="gameover-screen" class="overlay hidden">
+        <div class="panel">
+          <p class="eyebrow">SIGNAL LOST</p>
+          <h2>ARCHITECT DOWN</h2>
+          <p id="final-score" class="final-score">Score: 0</p>
+          <p id="final-glyphs" class="muted">DATA glyphs: 0</p>
+          <button id="btn-restart" class="primary" type="button">RUN AGAIN</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
